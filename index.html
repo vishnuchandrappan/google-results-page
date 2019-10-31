@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rock-Paper-Scissors</title>
+  </head>
+  <body>
+
+    <script>
+      let a1 = ['Rock','Paper','Scissors']
+
+      function computerPlay(){
+        return a1[Math.floor(Math.random()*a1.length)]
+      }
+
+      let a,b
+
+      function round(playerSelection, computerSelection){
+          b = playerSelection
+          a = computerSelection
+
+          if (b=='Rock' || b=='rock')
+            if (a == 'Rock' || a=='Scissors')
+              return ("Yeah! Rock x "+a)
+            else
+              return "You Lose! Paper beats Rock"
+
+          else if (b=='Paper' || b=='paper')
+            if (a == 'Paper' || a=='Rock')
+              return ("Yeah! Paper x "+a)
+            else
+              return "You Lose! Scissors beats Paper"
+
+          else if(b=='Scissors' || b=='scissors')
+            if (a == 'Scissors' || a=='Paper')
+              return ("Yeah! Scissors x "+a)
+            else
+              return "You Lose! Rock beats Scissors"
+
+          else
+            return "Invalid choice"
+      }
+
+      function game(){
+        let i=5;
+        while(i-->0){
+          console.log(round(prompt('Enter Choice'),computerPlay()))
+        }
+      }
+
+      game()
+
+    </script>
+
+  </body>
+</html>
